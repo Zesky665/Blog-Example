@@ -17,8 +17,15 @@ defmodule BlogApp.Blog do
       [%Post{}, ...]
 
   """
-  def list_posts do
+  def list_all_posts do
     Repo.all(Post)
+  end
+  
+  def list_posts do
+    query = from u in Post,
+              where: u.public == true,
+              order_by: [desc: u.inserted_at]
+    Repo.all(query)
   end
 
   @doc """

@@ -1,28 +1,6 @@
-<h2>Show Post</h2>
+<h1><%= @post.title %></h1>
 
-<ul>
+<p><%= as_html(@post.body) %></p>
 
-  <li>
-    <strong>Title:</strong>
-    <%= @post.title %>
-  </li>
 
-  <li>
-    <strong>Body:</strong>
-    <%= @post.body %>
-  </li>
-
-  <li>
-    <strong>Summary:</strong>
-    <%= @post.summary %>
-  </li>
-
-  <li>
-    <strong>Public:</strong>
-    <%= @post.public %>
-  </li>
-
-</ul>
-
-<span><%= link "Edit", to: post_path(@conn, :edit, @post) %></span>
 <span><%= link "Back", to: post_path(@conn, :index) %></span>

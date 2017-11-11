@@ -1,6 +1,6 @@
 defmodule BlogAppWeb.Router do
   use BlogAppWeb, :router
-  use Coherence.Router  
+  use Coherence.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -38,7 +38,7 @@ defmodule BlogAppWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    resources "/posts", PostController
+    resources "/posts", PostController, only: [:index, :show] 
 
   end
 

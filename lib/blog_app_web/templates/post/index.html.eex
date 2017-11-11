@@ -4,8 +4,7 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Body</th>
-      <th>Summary</th>
+    
       <th>Public</th>
 
       <th></th>
@@ -15,8 +14,7 @@
 <%= for post <- @posts do %>
     <tr>
       <td><%= post.title %></td>
-      <td><%= post.body %></td>
-      <td><%= post.summary %></td>
+
       <td><%= post.public %></td>
 
       <td class="text-right">
